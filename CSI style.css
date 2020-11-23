@@ -1,0 +1,115 @@
+h1 {
+    font-family: serif;
+    color: #2f4f4f;
+    margin-top: 0;
+    margin-bottom: 10px;
+} /*TAG SELECTOR*/
+h2{
+    color: green;
+    font-size: 2em;
+}
+
+#page-title {
+    font-family: sans-serif;
+}/*ID SELECTOR*/
+
+.title {
+    font-family: monospace;
+}/*CLASS SELECTOR*/
+body {
+    font-family: sans-serif; 
+    background-color: #b3fac9;
+}
+.nav {
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 4px;
+}
+.nav li {
+    display: inline-block;
+}
+.nav a  {
+    color: white;
+    background-color: #13a4a4;
+    padding: 5px 15px; 
+    border-radius: 2px;
+    text-decoration: none;
+}
+/* instead of adding important its better you increase the number of selector*/
+/* But the best way to specify is by using the class selector to reduce/increase the specificity in this case is changing the #main-nav to .nav*/
+.nav .featured {
+    background-color: orange;
+}
+/* A helpful mnemonic to remember this order is L o V e / H A t e*/
+a:link {
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: underline;
+}
+a:hover{
+    color: purple;
+}
+a:active{
+    color: red;
+}
+.footer {
+    color: #666;
+    background-color: #ccc;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+}
+.footer a {
+    color: initial;
+    text-decoration: underline;
+}
+/* ID SELECTOR WINS BECAUSE OF THE ID SELECTOR SUPERIORITY COMPARED WITH CLASS AND TAG*/
+/* Applying inline styles overrides the styles applied using selectors.*/
+/* !important overrides an inline style, but if !important is apllied to the inline selector itself nothing can overide it*/
+
+/*
+ If a selector has more IDs, it wins (that is, it’s more specific).
+ If that results in a tie, the selector with the most classes wins.
+ If that results in a tie, the selector with the most tag names wins.
+NOTE::: pseudo class selectors eg( :hover ) and attribute selector has the same specificity as the class selector.
+NOTE:: overriding an ID selector requiers another ID selector*/
+
+/*inline attribute, ID, class, tag*/
+/*1,0,0,0 overrides 0,1,2,0 because 1,0,0,0 is an inline element and 0,1,2,0 has 1 ID and 2 Class*/
+
+/*
+STYLE SHEET ORIGIN
+SELECTOR SPECIFICITY
+SOURCE ORDER
+*/
+/*                    FACING STYLING PROBLEMS            */
+/*when facing styling problems, tackle it in two ways, first which decleration will make it look right, second which selector would be appropriate*/
+
+/*                     TWO RULES OF THUMB              */
+/*1 Don’t use IDs in your selector. 
+  2 Don’t use !important, both except in exceptional cases*/
+
+/*                       INHERITENCE                  */
+/*The primary properties inherited are related to test: color, font, font-family, font-size, font-weight, font-variant, font-style, line-height, 
+letter-spacing, text-align, text-indent, text-transform, white-space, and word-spacing.*/
+
+/*                      SPECIAL VALUES              */
+/* INHERIT: allows inheritence value to take place when a cascade value is preventing it AND INITIAL allows an element to be giving its default value
+   to undo a cascade value AND both special values can be added to any css property */
+
+/*                  SHORT-HAND PROPERTIES             */
+/* BEWARE: shorthand values can succintly override properties and revert them to normal, even values you set yourself, font is the most egregious for 
+   causing problems, because it sets such a wide array of properties. TRouBLe, Truncated notation, think “Cartesian grid.” ,think “clock.”*/
+
+/*
+Summary
+ Keep selector specificity under control.
+ Don’t confuse cascade with inheritance.
+ Certain properties are inherited, including those for text, lists, and table borders.
+ Don’t confuse initial and auto values.
+ Stay out of TRouBLe with shorthand properties.*/
+.container {
+    max-width: 1080px; /* prevents horizontal scroll on smaller devices*/
+    margin: 0 auto;
+} 
